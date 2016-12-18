@@ -13,3 +13,10 @@ module AppArchitecture
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+SPOTIFY_CLIENT_ID = ENV['SPOTIFY_CLIENT_ID']
+SPOTIFY_CLIENT_SECRET = ENV['SPOTIFY_CLIENT_SECRET']
+
+# Authenticate rspotify
+RSpotify::authenticate(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
+
