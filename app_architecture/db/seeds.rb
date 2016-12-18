@@ -6,13 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.delete_all
+Mood.delete_all
+Comment.delete_all
+
 200.times do
-  User.create(first_name: Faker::Name.first_name,
-              last_name: Faker::Name.last_name,
-              user_name: Faker::Internet.user_name,
+  User.create(display_name: Faker::Internet.user_name,
               email: Faker::Internet.email,
-              picture: Faker::Avatar.image,
-              password: Faker::Internet.password,
+              country: Faker::Address.country,
+              followers: Faker::Crypto.md5,
+              images: Faker::Avatar.image,
+              credentials: Faker::Crypto.md5,
               created_at: Time.now,
               updated_at: Time.now)
 end

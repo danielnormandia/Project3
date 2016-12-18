@@ -4,9 +4,9 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :display_name
       t.string :email
       t.string :country
-      t.hash   :followers
-      t.array  :images
-      t.hash   :credentials
+      t.string :followers
+      t.string :images
+      t.string :credentials
 
       t.timestamps
     end
