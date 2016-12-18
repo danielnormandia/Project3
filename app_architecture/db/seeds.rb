@@ -13,21 +13,23 @@
               email: Faker::Internet.email,
               picture: Faker::Avatar.image,
               password: Faker::Internet.password,
-              created_at: Time.now)
+              created_at: Time.now,
+              updated_at: Time.now)
 end
 
 70.times do
   Mood.create(title: Faker::Hipster.word,
+              user_id: (1..200).to_a.sample,
               created_at: Time.now,
-              updated_at: Time.now,
-              slug: Faker::Internet.slug(nil, '_'))
+              updated_at: Time.now)
 end
 
 1000.times do
   Comment.create(content: Faker::Lorem.paragraph(2),
-                 created_at: Time.now,
-                 updated_at: Time.now,
                  user_id: (1..200).to_a.sample,
-                 mood_slug: Faker::Internet.slug(nil, '_'))
-
+                 mood_id: (1..70).to_a.sample,
+                 created_at: Time.now,
+                 updated_at: Time.now)
 end
+
+

@@ -9,5 +9,5 @@ class User < ActiveRecord::Base
   has_many :moods
   has_many :comments
 
-end
+  has_secure_password
 end
