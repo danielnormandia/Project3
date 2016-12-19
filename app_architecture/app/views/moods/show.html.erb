@@ -5,13 +5,15 @@
       <%= comment['content'] %> <br><br>
 <% end %>
 
+
 <%= form_for :comment, method: 'post', url: {action: 'create'} do |f| %>
- <%= label(:comment, :artist_name) %><br>
- <%= f.text_field :artist_name %><br>
- <%= label(:comment, :track_name) %><br>
- <%= f.text_field :track_name %><br>
- <%= label(:comment, :content) %><br>
- <%= f.text_field :content %><br>
- <br>
- <%= f.submit "Submit Comment" %>
+<%= label(:comment, :artist_name) %><br>
+<%= f.text_field :artist_name %><br>
+<%= label(:comment, :track_name) %><br>
+<%= f.text_field :track_name %><br>
+<%= label(:comment, :content) %><br>
+<%= f.text_field :content %><br>
+<%= hidden_field_tag :comment, @mood['id'] %>
+<br>
+<%= f.submit "Submit Comment" %>
 <% end %>
