@@ -33,7 +33,9 @@ end
                  user_id: (1..200).to_a.sample,
                  mood_id: (1..70).to_a.sample,
                  created_at: Time.now,
-                 updated_at: Time.now)
+                 updated_at: Time.now,
+                 artist_name: Faker::Name.name,
+                 track_name: Faker::Hipster.word)
 end
 
 
