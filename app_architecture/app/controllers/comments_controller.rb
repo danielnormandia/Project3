@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-     def index
+  def index
     @comments = Comment.all
   end
 
@@ -8,17 +8,18 @@ class CommentsController < ApplicationController
   end
 
   def create
+   @current_user = User.find_by_id(session[:current_user_id])
    comment = params['comment']
    user = params['user']
-   mood = params['mood']
+   @mood = Mood.find_by(id: params[:id])
    Comment.create(content: comment['content'],
                 created_at: Time.now,
                 updated_at: Time.now,
                 artist_name: comment['artist_name'],
                 track_name: comment['track_name'],
-                user_id: comment['user_id'],
-                mood_id: )
- end
+                user_id: @current_user,
+                mood_id: @mood)
+  end
 
 
 end

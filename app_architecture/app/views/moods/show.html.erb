@@ -6,14 +6,15 @@
 <% end %>
 
 
-<%= form_for :comment, method: 'post', url: {action: 'create'} do |f| %>
+<%= form_for :comment, method: 'post', url: "/comment_add" do |f| %>
+<%= label(:comment, :content) %><br>
+<%= f.text_field :content %><br>
 <%= label(:comment, :artist_name) %><br>
 <%= f.text_field :artist_name %><br>
 <%= label(:comment, :track_name) %><br>
 <%= f.text_field :track_name %><br>
-<%= label(:comment, :content) %><br>
-<%= f.text_field :content %><br>
-<%= hidden_field_tag :comment, @mood['id'] %>
+<%= hidden_field_tag :user_id, @current_user %>
+<%= hidden_field_tag :mood_id, @mood["id"] %>
 <br>
 <%= f.submit "Submit Comment" %>
 <% end %>
