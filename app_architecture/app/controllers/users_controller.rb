@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     # # Create playlist in user's Spotify account
     # playlist = @user.create_playlist!('my-awesome-playlist')
 
+    track = RSpotify::Track.search('Sorry')
+
     # # Add tracks to a playlist in user's Spotify account
     # tracks = RSpotify::Track.search('Know')
     # playlist.add_tracks!(tracks)
@@ -37,5 +39,9 @@ class UsersController < ApplicationController
     # @user.top_tracks(time_range: 'short_term') #=> (Track array)
 
     # Check doc for more
+  end
+  def show
+    # This is the dashboard
+
   end
 end
