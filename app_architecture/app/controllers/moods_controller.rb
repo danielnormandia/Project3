@@ -4,6 +4,8 @@ class MoodsController < ApplicationController
   end
   def show
     @mood = Mood.find_by(id: params[:id])
+    @comments = Mood.find_by(id: params[:id]).comments
+
   end
   def create
     #add mood to db

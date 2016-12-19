@@ -1,1 +1,6 @@
 <!-- This is the dashboard -->
+<h1><%= @mood['title'] %></h1>
+
+<% @comments.each do |comment| %>
+      <%= comment['content'] %> <br><br>
+<% end %>
