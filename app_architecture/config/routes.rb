@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root to: 'users#index'
   get '/auth/spotify/callback', to: 'users#spotify'
 
+  resources :users, :moods, :comments
+
 end
