@@ -13,6 +13,12 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: rgb(24,24,24);
+  color: whitesmoke;
+}
+
 .video {
  position: fixed;
  top: 50%; left: 50%;
@@ -25,8 +31,8 @@
 }
 
 footer {
-  background: lightblue;
-  height: 100px;
+  background: rgba(0,0,0,0.3);;
+  height: 75px;
   padding: 15px;
   position: absolute;
   right: 0;
@@ -38,4 +44,27 @@ footer {
 footer a {
   margin-left: 15px;
   vertical-align: middle;
+  color: whitesmoke;
+}
+
+#spotify_button{
+  text-align: center;
+  font-size: 45px;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+#spotify_button a {
+  color: rgb(30,215,96);
+  text-decoration: none;
+}
+
+#spotify_button a:hover {
+  color: whitesmoke;
+  text-decoration: none;
 }

@@ -1,3 +1,5 @@
-<%= link_to 'Sign in with Spotify', '/auth/spotify' %>
+<div id="spotify_button">
+  <%= link_to '<i class="fa fa-spotify fa-5x" aria-hidden="true"></i><br>Log In'.html_safe, '/auth/spotify' %>
+</div>
 
 <%= video_tag "background.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video" %>
