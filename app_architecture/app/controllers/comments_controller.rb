@@ -9,17 +9,17 @@ class CommentsController < ApplicationController
   end
 
   def create
-   @current_user =
    comment = params['comment']
-   user = params['user']
-   @mood = Mood.find_by(id: params[:id])
+   user_id = User.find_by(email: params[:user_email]).id
+   mood_id = params[:mood_id]
+   byebug
    Comment.create(content: comment['content'],
+                artist_name: comment['artist_name'],
                 created_at: Time.now,
                 updated_at: Time.now,
-                artist_name: comment['artist_name'],
                 track_name: comment['track_name'],
-                user_id: @current_user,
-                mood_id: @mood)
+                user_id: user_id,
+                mood_id: mood_id)
    redirect_to :back
   end
 
