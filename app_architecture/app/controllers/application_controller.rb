@@ -1,14 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user
+  # helper_method :current_user, :get_hash
 
-  include SpotifyHelper
+  # # include SpotifyHelper
 
   # def current_user
   #   spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-  #   user = spotify_user
-  #   hash = spotify_user.to_hash
+  #   @user = spotify_user
+  #   @user_hash = spotify_user.to_hash
   #   User.create(display_name: spotify_user.display_name,
   #               email: spotify_user.email,
   #               country: spotify_user.country,
@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
   #               images: spotify_user.images,
   #               credentials: spotify_user.credentials,
   #               created_at: Time.now)
+  # end
+
+  # def get_hash
+  #   @user_hash
   # end
 
   # def login_required

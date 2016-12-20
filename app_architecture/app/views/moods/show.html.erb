@@ -5,8 +5,10 @@
       <%= comment['content'] %> <br><br>
 <% end %>
 
-
-<%= @current_user %>
+<%= session['spotify_user']['display_name'] %><br>
+<%= session['spotify_user']['country'] %><br>
+<%= session['spotify_user']['email'] %><br>
+<%= session['spotify_user']['images[0]'] %>
 
 <%= form_for :comment, method: 'post', url: "/comment_add" do |f| %>
 <%= label(:comment, :content) %><br>
@@ -15,7 +17,7 @@
 <%= f.text_field :artist_name %><br>
 <%= label(:comment, :track_name) %><br>
 <%= f.text_field :track_name %><br>
-<%= hidden_field_tag :user_id, @current_user %>
+<%= hidden_field_tag :user_id, session['spotify_user']['id'] %>
 <%= hidden_field_tag :mood_id, @mood["id"] %>
 <br>
 <%= f.submit "Submit Comment" %>

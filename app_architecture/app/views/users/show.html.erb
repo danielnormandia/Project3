@@ -1,6 +1,7 @@
 EYYY <br>
 
-<%= new_user.display_name %><br>
-<%= new_user.country %><br>
-<%= new_user.email %><br>
-<%= new_user.images[0] %>
+<%= session['spotify_user'].display_name %><br>
+<%= session['spotify_user'].country %><br>
+<%= session['spotify_user'].email %><br>
+<%= session['spotify_user'].images[0] %>
+

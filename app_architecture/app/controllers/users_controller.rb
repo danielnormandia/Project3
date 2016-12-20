@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
   def show
+    # byebug
+    # current_user
+    # byebug
     # This is the dashboard
     # spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
     # @user = spotify_user
