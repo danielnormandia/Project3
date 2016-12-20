@@ -6,6 +6,8 @@
 <% end %>
 
 
+<%= @current_user %>
+
 <%= form_for :comment, method: 'post', url: "/comment_add" do |f| %>
 <%= label(:comment, :content) %><br>
 <%= f.text_field :content %><br>
