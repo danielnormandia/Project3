@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
    comment = params['comment']
    user_id = User.find_by(email: params[:user_email]).id
    mood_id = params[:mood_id]
-   byebug
    Comment.create(content: comment['content'],
                 artist_name: comment['artist_name'],
                 created_at: Time.now,
