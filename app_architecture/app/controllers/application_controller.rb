@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
     artist_name = track_name.gsub(" ", "+")
     response = HTTParty.get("https://api.spotify.com/v1/search?q=#{track_name}+#{artist_name}&type=track,artist")
     uri = response['tracks']['items'][0]['uri']
-    end
   end
 
 end
