@@ -2,7 +2,8 @@
 <h1><%= @mood['title'] %></h1>
 
 <% @comments.each do |comment| %>
-      <%= comment['content'] %> <br><br>
+  <%= comment['track_name'] %> by <%= comment['artist_name'] %> <br>
+  <%= comment['content'] %> <br><br>
 <% end %>
 
 <%= session['spotify_user']['display_name'] %><br>

@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 # Spotify
 gem 'rspotify'
+# HTTParty
+gem 'httparty'
 
 
 # Use jquery as the JavaScript library

@@ -5,10 +5,8 @@ class MoodsController < ApplicationController
     @moods = Mood.all
   end
   def show
-    # byebug
     @mood = Mood.find_by(id: params[:id])
     @comments = Mood.find_by(id: params[:id]).comments
-    # @current_user = User.find_by_id(session[:current_user_id])
   end
   def create
     #add mood to db
