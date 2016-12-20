@@ -10,7 +10,7 @@ User.delete_all
 Mood.delete_all
 Comment.delete_all
 
-200.times do
+100.times do
   User.create(display_name: Faker::Internet.user_name,
               email: Faker::Internet.email,
               country: Faker::Address.country,
@@ -23,14 +23,14 @@ end
 
 70.times do
   Mood.create(title: Faker::Hipster.word,
-              user_id: (1..200).to_a.sample,
+              user_id: (1..100).to_a.sample,
               created_at: Time.now,
               updated_at: Time.now)
 end
 
-1000.times do
+100.times do
   Comment.create(content: Faker::Lorem.paragraph(2),
-                 user_id: (1..200).to_a.sample,
+                 user_id: (1..100).to_a.sample,
                  mood_id: (1..70).to_a.sample,
                  created_at: Time.now,
                  updated_at: Time.now,

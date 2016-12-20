@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
                 track_name: comment['track_name'],
                 user_id: @current_user,
                 mood_id: @mood)
+   redirect_to :back
   end
 
 
