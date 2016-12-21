@@ -11,4 +11,14 @@ class ApplicationController < ActionController::Base
     uri
   end
 
+  def playlist_add(track_name, artist_name)
+    track_name = track_name.gsub(" ", "+")
+    artist_name = track_name.gsub(" ", "+")
+    response = HTTParty.get("https://api.spotify.com/v1/search?q=#{track_name}+#{artist_name}&type=track,artist")
+    track = response['tracks']['items'][0]
+
+    current_user = session[:spotify_user]
+
+  end
+
 end
