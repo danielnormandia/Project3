@@ -1,7 +1,24 @@
-EYYY <br>
+<div class="container">
 
-<%= session['spotify_user']["display_name"] %><br>
-<%= session['spotify_user']["country"] %><br>
-<%= session['spotify_user']["email"] %><br>
-<%= session['spotify_user']["images"][0] %>
+  <div id="user-info" class="col-xs-7 col-md-4 img-rounded">
+    <p>Display Name: <%= @user['display_name'] %></p>
+    <p>Email: <%= @user['email'] %></p>
+    <p>Country: <%= @user['country'] %></p>
+  </div>
 
+  <div class="row"></div>
+  <br><br>
+
+  <div class="col-md-12 text-center">
+    <h1>My Suggestions</h1>
+    <div class='suggestions'>
+      <% @all_comments.each do |comment| %>
+      <span class="legend">Comment: </span><span class="key"><%= comment['content'] %> |</span>
+      <span class="legend">Artist: </span><span class="key"><%= comment['artist_name'] %> |</span>
+      <span class="legend">Track: </span><span class="key"><%= comment['track_name'] %></span><br><hr>
+    <% end %>
+    </div>
+  </div>
+
+
+</div>
