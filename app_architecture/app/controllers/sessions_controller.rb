@@ -1,24 +1,25 @@
 class SessionsController < ApplicationController
   def create
     spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-    @user = spotify_user
-    @userInDb = User.find_by email: "#{@user.email}"
-    sessionUser = @user;
-    emailCheck = @userInDb;
-    if ((sessionUsers.email) == (emailCheck.email))
-    else
-    User.create(display_name: spotify_user.display_name,
-                email: spotify_user.email,
-                country: spotify_user.country,
-                followers: spotify_user.followers,
-                images: spotify_user.images,
-                credentials: spotify_user.credentials,
-                created_at: Time.now)
+    emailCheck = User.find_by(email: spotify_user.email)
+
+    # if ((emailCheck.email) != (spotify_user.email))
+    if emailCheck == nil
+      User.create(display_name: spotify_user.display_name,
+                  email: spotify_user.email,
+                  country: spotify_user.country,
+                  followers: spotify_user.followers,
+                  images: spotify_user.images,
+                  credentials: spotify_user.credentials,
+                  created_at: Time.now)
     end
+
     user_hash = spotify_user.to_hash
-    session[:spotify_user] = user_hash
+    session_user = user_hash
+    session_user = session[:spotify_user]
+    byebug
+
     redirect_to root_url, :notice => "Signed in!"
-    # byebug
   end
 
   def destroy
