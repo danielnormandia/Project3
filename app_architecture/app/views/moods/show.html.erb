@@ -1,15 +1,21 @@
 <!-- This is the dashboard -->
 <h1><%= @mood['title'] %></h1>
 
+<div class="spotify-embed">
+  <iframe class="spotify-embed-one" src="https://embed.spotify.com/?uri=spotify%3Atrack%3A33Q6ldVXuJyQmqs8BmAa0k" width="340" height="80" frameborder="0" allowtransparency="true"></iframe>
+</div>
+
+<!-- <div class="spotify-embed-list">
+  <iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A33Q6ldVXuJyQmqs8BmAa0k" width="340" height="80" frameborder="0" allowtransparency="true"></iframe>
+</div> -->
+
 <% @comments.each do |comment| %>
+<div class="comment" data-uri="<%= spotify_search(comment['track_name'], ['artist_name']) %>">
   <%= comment['track_name'] %> by <%= comment['artist_name'] %> <br>
   <%= comment['content'] %> <br><br>
-<% end %>
+</div>
 
-<%= session['spotify_user']['display_name'] %><br>
-<%= session['spotify_user']['country'] %><br>
-<%= session['spotify_user']['email'] %><br>
-<%= session['spotify_user']['images[0]'] %>
+<% end %>
 
 <%= form_for :comment, method: 'post', url: "/comment_add" do |f| %>
 <%= label(:comment, :content) %><br>
