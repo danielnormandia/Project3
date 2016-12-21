@@ -1,5 +1,4 @@
 class MoodsController < ApplicationController
-  # include current_user
 
   def index
     @moods = Mood.all

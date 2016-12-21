@@ -12,13 +12,15 @@ class CommentsController < ApplicationController
    comment = params['comment']
    user_id = User.find_by(email: params[:user_email]).id
    mood_id = params[:mood_id]
+   uri = spotify_search(comment['track_name'], comment['artist_name'])
    Comment.create(content: comment['content'],
                 artist_name: comment['artist_name'],
+                track_name: comment['track_name'],
                 created_at: Time.now,
                 updated_at: Time.now,
-                track_name: comment['track_name'],
                 user_id: user_id,
-                mood_id: mood_id)
+                mood_id: mood_id,
+                uri: uri)
    redirect_to :back
   end
 

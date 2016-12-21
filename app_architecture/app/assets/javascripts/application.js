@@ -31,28 +31,38 @@ $(window).on('load resize', function() {
 });
 
 // Click to change spotify player
-
-jQuery(document).ready(function($) {
-
-console.log("js working")
-
 var uriChangerOne = function(){
   $('.comment').on('click', function() {
     var uri = this.dataset.uri
+    debugger
     console.log(uri)
     $('.spotify-embed-one').attr('src', 'https://embed.spotify.com/?uri=spotify%3Atrack%3A' + uri);
   });
 };
 
+var uriChangerMany = function(){
+    var moodTitle = $('.mood-title').data('mood')
+    console.log(moodTitle)
+    var commentList = $('.comment')
+    var uriList = commentList.map(function(index, comment) {
+      return comment.dataset.uri.toString();
+    })
+    var uriString = ""
+    uriList.each(function(index, uri){
+      return uriString += uri + ","
+    })
+    uriString = uriString.slice(0, -1)
+    console.log(uriString)
+
+    $('.spotify-embed-many').attr('src', 'https://embed.spotify.com/?uri=spotify:trackset:' + moodTitle +':' + uriString);
+};
+
+jQuery(document).ready(function($) {
+
+console.log("js working")
+
 uriChangerOne();
-
-// var uriChangerMany = function(){
-//     var uri = this.dataset.uri
-//     console.log(uri)
-//     $('.spotify-embed-list').attr('src', 'https://embed.spotify.com/?uri=spotify:trackset:' + mood_title +':5Z7ygHQo02SUrFmcgpwsKW,1x6ACsKV4UdWS2FMuPFUiT,4bi73jCM02fMpkI11Lqmfe' + uri);
-// };
-
-// uriChangerMany();
+uriChangerMany();
 
 });
 
