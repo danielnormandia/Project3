@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<% @comments.each do |comment| %>
+<% @comments.reverse_each do |comment| %>
 <div class="comment" data-uri="<%= spotify_search(comment['track_name'], comment['artist_name']) %>">
   <%= comment['track_name'] %> by <%= comment['artist_name'] %> <br>
   <%= comment['content'] %> <br><br>
