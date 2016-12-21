@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     @userInDb = User.find_by email: "#{@user.email}"
     sessionUser = @user;
     emailCheck = @userInDb;
-    if ((sessionUsers.email) == (emailCheck.email))
+    if ((sessionUser.email) == (emailCheck.email))
     else
     User.create(display_name: spotify_user.display_name,
                 email: spotify_user.email,
