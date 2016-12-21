@@ -6,14 +6,22 @@ h1 {
   text-align: center;
   margin: 100px;
 }
+
+
+
+
 #moods {
     display: block;
-    background: #000;
-    width: 20vw;
-    height: 20vw;
+    text-align: center;
+    width: 25vw;
+    height: 25vw;
     float: left;
     position: relative;
     margin: 50px;
+    background-image: url(https://i.ytimg.com/vi/yi1YlDpGocM/maxresdefault.jpg);
+    background-size: cover;
+    opacity: 0.5;
+
 
 
 
