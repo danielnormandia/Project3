@@ -22,7 +22,8 @@ class SessionsController < ApplicationController
                 credentials: spotify_user.credentials,
                 created_at: Time.now)
     end
-    session[:spotify_user] = spotify_user
+    user_hash = spotify_user.to_hash
+    session[:spotify_user] = user_hash
     redirect_to root_url, :notice => "Signed in!"
     # byebug
   end

@@ -34,7 +34,6 @@ $(window).on('load resize', function() {
 var uriChangerOne = function(){
   $('.comment').on('click', function() {
     var uri = this.dataset.uri
-    debugger
     console.log(uri)
     $('.spotify-embed-one').attr('src', 'https://embed.spotify.com/?uri=spotify%3Atrack%3A' + uri);
   });
