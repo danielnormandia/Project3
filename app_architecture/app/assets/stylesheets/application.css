@@ -76,12 +76,13 @@ footer a {
   box-sizing: border-box;
 }
 
-.spotify-embeds {
+.spotify-embed-wrapper {
   width: 100%;
-  padding: 50px;
+  padding: 3%;
 }
 
 .spotify-embed {
+  height: 80px;
   background: #282828;
 
   &:not(:last-of-type) {
