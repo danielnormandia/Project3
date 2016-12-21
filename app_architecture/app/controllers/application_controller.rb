@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
     @hash = spotify_user.to_hash
   end
+
   def updateUser
     spotify_user = RSpotify::User.new(@hash)
   end
@@ -20,16 +21,16 @@ class ApplicationController < ActionController::Base
   end
 
   def playlist_create
-    current_user = session[:spotify_user]
-    spotify_user = RSpotify::User.new(current_user)
-    playlist = spotify_user.create_playlist!('Test')
-    comments = Mood.find_by(id: params[:id]).comments
-    tracks = Array.new
-    comments.each do |comment|
-      response = RSpotify::Track.find(comment.uri.gsub("spotify:artist:",""))
-      tracks.push(response)
-    end
-    p tracks
+    # current_user = session[:spotify_user]
+    # spotify_user = RSpotify::User.new(current_user)
+    # playlist = spotify_user.create_playlist!('Test')
+    # comments = Mood.find_by(id: params[:id]).comments
+    # tracks = Array.new
+    # comments.each do |comment|
+    #   response = RSpotify::Track.find(comment.uri.gsub("spotify:artist:",""))
+    #   tracks.push(response)
+    # end
+    # p tracks
   #   # playlist.add_tracks!(tracks)
   end
 
