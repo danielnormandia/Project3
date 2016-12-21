@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 body {
   font-family: 'Montserrat', sans-serif;
   background: rgb(24,24,24);
@@ -67,4 +68,35 @@ footer a {
 #spotify_button a:hover {
   color: whitesmoke;
   text-decoration: none;
+}
+
+/* Responsive Spotify Player */
+/* Borrowed from https://codepen.io/justinjohnso/pen/pNYLYx */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.spotify-embeds {
+  width: 100%;
+  padding: 50px;
+}
+
+.spotify-embed {
+  background: #282828;
+
+  &:not(:last-of-type) {
+    margin-bottom: 5px;
+  }
+
+  iframe {
+    display: block;
+    transition: opacity 0.125s;
+    .js & {
+      opacity: 0;
+
+      &.loaded {
+        opacity: 1;
+      }
+    }
+  }
 }
