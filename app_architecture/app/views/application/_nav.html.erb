@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="#">Random! <span class="sr-only">(current)</span></a></li>
-        <li><a href="users/show">Dashboard</a></li>
+        <li><a href="/users/<%="#{User.find_by(email: session[:spotify_user]['email']).id}"%>">Dashboard</a></li>
         <li><a href="#">Logout</a></li>
       </ul>
       <!-- <form class="navbar-form navbar-left">
