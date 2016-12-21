@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
+  include SpotifyHelper
+
   def create
-    spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+    initUser
+    # spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
     emailCheck = User.find_by(email: spotify_user.email)
 
     if emailCheck == nil
