@@ -1,8 +1,38 @@
-<h1>How am I feeling?</h1>
+
+<h1> How am I feeling? </h1>
 
 <% @moods.each do |mood| %>
-<li id="moods" <p><%= mood['title'] %> </p> <%= link_to mood['title'], mood_path(mood) %></li>
+<li id="moods" <p>
 
+<span><%= mood['title'] %> </span></p>
+
+<%= link_to mood['title'], mood_path(mood) %></li>
+</div>
 
 
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
