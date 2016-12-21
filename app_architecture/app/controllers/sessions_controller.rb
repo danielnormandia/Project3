@@ -1,9 +1,6 @@
 class SessionsController < ApplicationController
-  include SpotifyHelper
-
   def create
-    initUser
-    # spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+    spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
     emailCheck = User.find_by(email: spotify_user.email)
 
     if emailCheck == nil
@@ -20,7 +17,7 @@ class SessionsController < ApplicationController
     session_user = user_hash
     session_user = session[:spotify_user]
 
-    redirect_to root_url, :notice => "Signed in!"
+    redirect_to "/users/#{User.find_by(email: session_user['email']).id}", :notice => "Signed in!"
   end
 
   def destroy
