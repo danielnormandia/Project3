@@ -83,6 +83,11 @@ footer a {
   width: 100%;
   padding: 3%;
 }
+/*
+.spotify-list-wrapper {
+  width: 100%;
+  padding: 3%;
+} */
 
 .spotify-embed {
   height: 80px;
@@ -104,3 +109,25 @@ footer a {
     }
   }
 }
+
+/* .spotify-embed-list {
+  height: 500px;
+  background: #282828;
+
+  &:not(:last-of-type) {
+    margin-bottom: 5px;
+  }
+
+  iframe {
+    display: block;
+    transition: opacity 0.125s;
+    .js & {
+      opacity: 0;
+
+      &.loaded {
+        opacity: 1;
+      }
+    }
+  }
+}
+ */
