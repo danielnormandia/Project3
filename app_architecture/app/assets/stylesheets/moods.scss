@@ -1,3 +1,29 @@
 // Place all the styles related to the moods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  text-align: center;
+  margin: 100px;
+}
+#moods {
+    display: block;
+    background: #000;
+    width: 20vw;
+    height: 20vw;
+    float: left;
+    position: relative;
+    margin: 50px;
+
+
+
+}
+
+.hostile {
+  display: block;
+  background: #000;
+  width: 20vw;
+  height: 20vw;
+}
+
+
