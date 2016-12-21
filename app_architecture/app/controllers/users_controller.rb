@@ -1,18 +1,16 @@
 class UsersController < ApplicationController
 
   def show
-    # byebug
-    # current_user
-    # byebug
-    # This is the dashboard
-    # spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-    # @user = spotify_user
-    # User.create(display_name: spotify_user.display_name,
-    #             email: spotify_user.email,
-    #             country: spotify_user.country,
-    #             followers: spotify_user.followers,
-    #             images: spotify_user.images,
-    #             credentials: spotify_user.credentials,
-    #             created_at: Time.now)
+    @user = User.find_by(id: params[:id])
+    # @image = RSpotify::User.find('justinjohnso').images[0]['url']
+    @user_comments = User.find_by(id: params[:id]).comments
+    # @moods = Mood.find_by(title: params[:title]).comments.where("user_id = #{params[:id]}")
+    # @mood_comments = @moods.map do |mood|
+    #   mood
+    # end
+    @all_comments = @user_comments.map do |comment|
+      comment
+    end
   end
 end
+

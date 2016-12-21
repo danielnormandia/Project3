@@ -1,3 +1,24 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user-info {
+  line-height: .8;
+  background: rgba(255,255,255,0.2);
+  padding: 5px;
+}
+
+.suggestions {
+  line-height: 2;
+}
+
+.legend {
+  color: rgb(30,215,96);
+  letter-spacing: .2em;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.key {
+  letter-spacing: .4em;
+}
