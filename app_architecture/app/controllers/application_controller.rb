@@ -19,28 +19,4 @@ class ApplicationController < ActionController::Base
     uri.slice!("spotify:track:")
     uri
   end
-
-<<<<<<< HEAD
-=======
-  def playlist_create
-    if Mood.find_by(id: params[:id]).comments != []
-      spotify_user = updateUser
-      playlist = spotify_user.create_playlist!('Test')
-
-      commentList = Comment.where(mood_id: params[:id])
-      trackList = []
-      commentList.each do |comment|
-        uri = comment.uri.gsub("spotify:track:", "")
-        track = RSpotify::Track.find(uri)
-        trackList.push(track)
-      end
-      trackList
-      playlist.add_tracks!(trackList)
-    end
-  end
-
-  # def playlist_add
-  # end
-
->>>>>>> a44a531f35fd2abd9dd56f211ad3876e9e0fdb1d
 end
