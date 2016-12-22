@@ -17,7 +17,7 @@
       <span class="legend">Artist: </span><span class="key"><%= comment['artist_name'] %> |</span>
       <span class="legend">Track: </span><span class="key"><%= comment['track_name'] %></span><br>
       <a href='/comments/<%= comment["id"] %>/edit'>Edit this comment!</a><br>
-      <%= button_to 'Remove this comment', comment, method: :delete %><br><hr>
+      <%= button_to 'Remove this comment', comment, method: :delete, class: "btn btn-danger" %><br><hr>
     <% end %>
     </div>
   </div>

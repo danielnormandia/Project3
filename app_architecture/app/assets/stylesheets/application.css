@@ -38,7 +38,7 @@ body {
  transform: translate(-50%, -50%);
 }
 
-.form-styling input {
+.form-styling input, textarea {
   color: black;
 }
 

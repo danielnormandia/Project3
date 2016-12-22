@@ -21,12 +21,12 @@
    -->
    <h3>Add a song to the playlist:</h3>
   <%= form_for :comment, html: {class: "form-styling"}, method: 'post', url: "/comment_add" do |f| %>
-  <%= label(:comment, :content) %><br>
-  <%= f.text_field :content %><br>
-  <%= label(:comment, :artist_name) %><br>
-  <%= f.text_field :artist_name %><br>
   <%= label(:comment, :track_name) %><br>
   <%= f.text_field :track_name %><br>
+  <%= label(:comment, :artist_name) %><br>
+  <%= f.text_field :artist_name %><br>
+  <%= label(:comment, :comment) %><br>
+  <%= f.text_area :content %><br>
   <%= hidden_field_tag :user_email, session['spotify_user']['email'] %>
   <%= hidden_field_tag :mood_id, @mood['id'] %>
   <br>

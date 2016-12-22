@@ -25,8 +25,9 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @user = User.find_by(id: params[:id])
     Comment.find_by(id: params[:id]).update(comment_params)
-    redirect_to :back
+    redirect_to ('/users')
   end
 
   def comment_params

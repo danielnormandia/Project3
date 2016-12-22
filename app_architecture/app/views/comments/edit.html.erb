@@ -1,7 +1,9 @@
-<%= form_for, html: {class: "form-styling"}, @comment do |f| %>
-  <%= f.label :content %>:
-  <%= f.text_field :content %><br />
+<div class="form-styling">
+  <%= form_for @comment do |f| %>
+    <%= f.label :content %>:
+    <%= f.text_field :content %><br />
 
-  <%= f.submit %>
+    <%= f.submit %>
 
-<% end %>
+  <% end %>
+</div>
