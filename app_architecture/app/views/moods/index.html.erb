@@ -12,9 +12,9 @@
 <%= form_for :mood, method: 'post', url: "/moods" do |f| %>
   <%= label(:mood, :title) %><br>
   <%= f.text_field :title %><br>
-  <%= hidden_field_tag :user_id, session['spotify_user']['id'] %>
+  <%= hidden_field_tag :user_id, "#{User.find_by(email: session[:spotify_user]["email"]).id}" %>
   <br>
-  <%= f.submit "Share your mood" %>
+  <%= f.submit "Submit" %>
 <% end %>
 
 
