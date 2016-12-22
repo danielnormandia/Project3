@@ -31,13 +31,13 @@ $(window).on('load resize', function() {
 });
 
 // Click to change spotify player
-var uriChangerOne = function(){
-  $('.comment').on('click', function() {
-    var uri = this.dataset.uri
-    console.log(uri)
-    $('.spotify-embed-one').attr('src', 'https://embed.spotify.com/?uri=spotify%3Atrack%3A' + uri);
-  });
-};
+// var uriChangerOne = function(){
+//   $('.comment').on('click', function() {
+//     var uri = this.dataset.uri
+//     console.log(uri)
+//     $('.spotify-embed-one').attr('src', 'https://embed.spotify.com/?uri=spotify%3Atrack%3A' + uri);
+//   });
+// };
 
 var uriChangerMany = function(){
     var moodTitle = $('.mood-title').data('mood')
