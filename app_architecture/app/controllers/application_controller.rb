@@ -22,20 +22,20 @@ class ApplicationController < ActionController::Base
 
   def playlist_create
     spotify_user = updateUser
-    # current_user = session[:spotify_user]
-    # spotify_user = RSpotify::User.new(current_user)
     playlist = spotify_user.create_playlist!('Test')
-    # comments = Mood.find_by(id: params[:id]).comments
-    # tracks = Array.new
-    # comments.each do |comment|
-    #   response = RSpotify::Track.find(comment.uri.gsub("spotify:artist:",""))
-    #   tracks.push(response)
-    # end
-    # p tracks
-  #   # playlist.add_tracks!(tracks)
+
+    commentList = Comment.where(mood_id: params[:id])
+    trackList = []
+    commentList.each do |comment|
+      uri = comment.uri.gsub("spotify:track:", "")
+      track = RSpotify::Track.find(uri)
+      trackList.push(track)
+    end
+    trackList
+    playlist.add_tracks!(trackList)
   end
 
-  def playlist_add
-  end
+  # def playlist_add
+  # end
 
 end

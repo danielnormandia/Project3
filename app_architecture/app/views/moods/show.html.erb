@@ -20,12 +20,10 @@
   <%= comment['track_name'] %> by <%= comment['artist_name'] %> <br>
   <%= comment['content'] %> <br><br>
 </div>
+<% end %>
 <!--
 <% playlist_create %>
-<% playlist_add %> -->
-
-<% end %>
-
+ -->
 <%= form_for :comment, method: 'post', url: "/comment_add" do |f| %>
 <%= label(:comment, :content) %><br>
 <%= f.text_field :content %><br>
