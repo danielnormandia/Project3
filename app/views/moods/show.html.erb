@@ -1,0 +1,56 @@
+<!-- This is the dashboard -->
+<div class="container moods-show">
+
+  <h1 class="mood-title" data-mood="<%= @mood['title'] %>"><%= @mood['title'] %></h1>
+
+  <br><br>
+
+  <div class="row">
+
+    <div class="comments-wrapper col-md-8">
+      <% @comments.reverse_each do |comment| %>
+      <div class="comment" data-uri="<%= spotify_search(comment['track_name'], comment['artist_name']) %>">
+        <span class="legend"><%= comment['track_name'] %></span> <span class="key">by</span><span class="legend"><%= comment['artist_name'] %></span> <br>
+        <span class="key"><%= comment['content'] %></span> <br><br>
+      </div>
+      <% end %>
+
+      <h3>Add a song to the playlist:</h3>
+      <%= form_for :comment, html: {class: "form-styling"}, method: 'post', url: "/comment_add" do |f| %>
+      <%= label(:comment, :track_name) %><br>
+      <%= f.text_field :track_name %><br>
+      <%= label(:comment, :artist_name) %><br>
+      <%= f.text_field :artist_name %><br>
+      <%= label(:comment, :comment) %><br>
+      <%= f.text_area :content %><br>
+      <%= hidden_field_tag :user_email, session['spotify_user']['email'] %>
+      <%= hidden_field_tag :mood_id, @mood['id'] %>
+      <br>
+      <%= f.submit "Submit Comment" %>
+      <% end %>
+    </div>
+
+    <div class="spotify-list-wrapper col-md-4">
+      <div class="affix">
+
+         <div class="add-to-user-playlist">
+          <%= form_for :playlist, html: {class: "form-styling"}, method: 'post', url: "/playlist_add" do |f| %>
+          <%= label(:playlist, "Name Your Playlist") %><br>
+          <%= f.text_field :playlist_name %><br>
+          <%= hidden_field_tag :mood_id, @mood['id'] %>
+          <br>
+          <%= f.submit "Add to your Spotify" %>
+          <% end %>
+          <br><br>
+        </div>
+
+        <div class="spotify-embed-list">
+          <iframe class="spotify-embed-many" src="https://embed.spotify.com/?uri=spotify:trackset:PREFEREDTITLE:5Z7ygHQo02SUrFmcgpwsKW,1x6ACsKV4UdWS2FMuPFUiT,4bi73jCM02fMpkI11Lqmfe" frameborder="0" allowtransparency="true" width="300" height="300"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
