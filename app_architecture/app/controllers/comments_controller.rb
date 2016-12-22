@@ -24,5 +24,21 @@ class CommentsController < ApplicationController
    redirect_to :back
   end
 
+  def update
+    Comment.find_by(id: params[:id]).update(comment_params)
+    redirect_to :back
+  end
 
+  def comment_params
+    params.require(:comment).permit(:content, :user_id, :mood_id)
+  end
+
+  def edit
+    @comment = Comment.find_by(id: params[:id])
+  end
+
+  def destroy
+    Comment.destroy(params['id'])
+    redirect_to :back
+  end
 end

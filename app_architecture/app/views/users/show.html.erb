@@ -15,7 +15,9 @@
       <% @all_comments.each do |comment| %>
       <span class="legend">Comment: </span><span class="key"><%= comment['content'] %> |</span>
       <span class="legend">Artist: </span><span class="key"><%= comment['artist_name'] %> |</span>
-      <span class="legend">Track: </span><span class="key"><%= comment['track_name'] %></span><br><hr>
+      <span class="legend">Track: </span><span class="key"><%= comment['track_name'] %></span><br>
+      <a href='/comments/<%= comment["id"] %>/edit'>Edit this comment!</a><br>
+      <%= button_to 'Remove this comment', comment, method: :delete %><br><hr>
     <% end %>
     </div>
   </div>
