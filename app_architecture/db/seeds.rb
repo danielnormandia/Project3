@@ -10,7 +10,8 @@ Mood.delete_all
 Comment.delete_all
 
 20.times do
-  User.create(display_name: Faker::Internet.user_name,
+  User.create(display_name: Faker::Name.name,
+              spotify_id: Faker::Internet.user_name,
               email: Faker::Internet.email,
               country: Faker::Address.country,
               followers: Faker::Crypto.md5,

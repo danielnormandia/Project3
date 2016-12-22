@@ -5,15 +5,16 @@ class SessionsController < ApplicationController
     emailCheck = User.find_by(email: @hash['email'])
 
     if emailCheck == nil
-      User.create(display_name: @hash.display_name,
-                  email: @hash.email,
-                  country: @hash.country,
-                  followers: @hash.followers,
-                  images: @hash.images[0].url,
-                  credentials: @hash.credentials,
+      User.create(display_name: @hash['display_name'],
+                  email: @hash['email'],
+                  country: @hash['country'],
+                  followers: @hash['followers'],
+                  images: @hash['images[0].url'],
+                  credentials: @hash['credentials'],
+                  spotify_id: @hash['id'],
                   created_at: Time.now)
     end
-    @hash = session[:spotify_user]
+    session[:spotify_user] = @hash
 
     redirect_to "/users/#{User.find_by(email: @hash['email']).id}", :notice => "Signed in!"
   end
