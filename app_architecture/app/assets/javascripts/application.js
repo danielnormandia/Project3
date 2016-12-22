@@ -51,7 +51,21 @@ var uriChangerMany = function(){
       return uriString += uri + ","
     })
     uriString = uriString.slice(0, -1)
-    console.log(uriString)
+    // console.log(uriString)
+
+    // var $playlistWrapper = $('div').attr('class', 'spotify-list-wrapper');
+    // var $playlistEmbed = $('div').addClass('class', 'spotify-embed-list');
+    // var $iFrame = $('iframe').attr({
+    //   src: 'https://embed.spotify.com/?uri=spotify:trackset:' + moodTitle +':' + uriString,
+    //   frameborder: '0',
+    //   allowtransparency: 'true',
+    //   width: '300',
+    //   height: '380'
+    // }).addClass('spotify-embed-many');
+
+    // $($playlistEmbed).append($iFrame)
+    // $($playlistWrapper).append($playlistEmbed)
+    // $($playlistWrapper).append($('.add-user-to-playlist'))
 
     $('.spotify-embed-many').attr('src', 'https://embed.spotify.com/?uri=spotify:trackset:' + moodTitle +':' + uriString);
 };
@@ -61,7 +75,7 @@ jQuery(document).ready(function($) {
 console.log("js working")
 
 uriChangerMany();
-uriChangerOne();
+// uriChangerOne();
 
 });
 
