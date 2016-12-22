@@ -42,4 +42,22 @@ class CommentsController < ApplicationController
     Comment.destroy(params['id'])
     redirect_to :back
   end
+
+   def makePlaylist
+    playlist_info = params['playlist']
+    mood_id = params[:mood_id]
+    spotify_user = updateUser
+    playlist = spotify_user.create_playlist!(playlist_info['playlist_name'])
+
+    commentList = Comment.where(mood_id: mood_id)
+    trackList = []
+    commentList.each do |comment|
+      uri = comment.uri.gsub("spotify:track:", "")
+      track = RSpotify::Track.find(uri)
+      trackList.push(track)
+    end
+    trackList
+    playlist.add_tracks!(trackList)
+    redirect_to :back
+  end
 end
