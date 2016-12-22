@@ -7,6 +7,12 @@ class MoodsController < ApplicationController
   def show
     @mood = Mood.find_by(id: params[:id])
     @comments = Mood.find_by(id: params[:id]).comments
+    @allUris = String.new
+    @comments.reverse_each do |comment|
+      @allUris += "#{comment.uri.gsub("spotify:track:", "")},"
+    end
+    @allUris.chop!
+    @moodTitle = @mood['title']
   end
 
   def create

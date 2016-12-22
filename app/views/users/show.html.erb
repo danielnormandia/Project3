@@ -14,6 +14,16 @@
   <br><br>
 
   <div class="col-md-12 text-center">
+    <h1>My Moods</h1>
+    <div class='suggestions'>
+      <% @userMoods.each do |mood| %>
+      <span class="legend">Mood: </span><span class="key"><%= mood['title'] %> |</span>
+      <%= link_to "View Mood Thread", "/moods/#{mood.id}" %><br><hr>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-12 text-center">
     <h1>My Suggestions</h1>
     <div class='suggestions'>
       <% @all_comments.each do |comment| %>

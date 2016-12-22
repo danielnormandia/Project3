@@ -67,15 +67,9 @@ var uriChangerMany = function(){
     // $($playlistWrapper).append($playlistEmbed)
     // $($playlistWrapper).append($('.add-user-to-playlist'))
 
-    $('.spotify-embed-many').attr('src', 'https://embed.spotify.com/?uri=spotify:trackset:' + moodTitle +':' + uriString);
+    // $('.spotify-embed-many').attr('src', 'https://embed.spotify.com/?uri=spotify:trackset:' + moodTitle +':' + uriString);
 };
 
-// var playlistAdder = function(){
-//   $('.make-playlist').on('click', function(event) {
-//     // event.preventDefault();
-//     $(this).insertAfter('<% playlist_create %>')
-//   });
-// }
 
 jQuery(document).ready(function($) {
 
