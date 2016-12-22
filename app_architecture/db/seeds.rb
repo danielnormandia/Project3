@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.delete_all
 Mood.delete_all
 Comment.delete_all
 
@@ -28,6 +27,7 @@ end
               updated_at: Time.now)
 end
 
+RSpotify.authenticate(SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET)
 randTrackArr = RSpotify::Recommendations.generate(limit: 50, seed_genres: ['blues', 'funk']).tracks
 
 randTrackArr.each do |randTrack|

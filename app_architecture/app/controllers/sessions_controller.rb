@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     session_user = user_hash
     session_user = session[:spotify_user]
 
-    redirect_to root_url, :notice => "Signed in!"
+    redirect_to "/users/#{User.find_by(email: session_user['email']).id}", :notice => "Signed in!"
   end
 
   def destroy
