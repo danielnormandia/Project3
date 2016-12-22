@@ -3,7 +3,7 @@
 
   <h1 class="mood-title" data-mood="<%= @mood['title'] %>"><%= @mood['title'] %></h1>
   <div class="add-to-user-playlist"><h4>Add Playlist to Your Spotify</h4></div>
-  <button type="" class="make-playlist">Click me!</button>
+  <%= link_to "Click Me!", :controller => "comments", :action => "makePlaylist" %>
 
   <div class="spotify-list-wrapper">
     <div class="spotify-embed-list">
