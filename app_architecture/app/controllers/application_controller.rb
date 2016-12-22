@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def updateUser
-    spotify_user = RSpotify::User.new(@hash)
+    spotify_user = RSpotify::User.new(session[:spotify_user])
   end
 
   def spotify_search(track_name, artist_name)
@@ -21,9 +21,10 @@ class ApplicationController < ActionController::Base
   end
 
   def playlist_create
+    spotify_user = updateUser
     # current_user = session[:spotify_user]
     # spotify_user = RSpotify::User.new(current_user)
-    # playlist = spotify_user.create_playlist!('Test')
+    playlist = spotify_user.create_playlist!('Test')
     # comments = Mood.find_by(id: params[:id]).comments
     # tracks = Array.new
     # comments.each do |comment|
