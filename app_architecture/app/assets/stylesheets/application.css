@@ -56,6 +56,15 @@ footer a {
   color: whitesmoke;
 }
 
+.modal-content {
+  background: rgb(24,24,24);
+  color: whitesmoke;
+}
+
+.modal-content a {
+  color: rgb(30,215,96);
+}
+
 #spotify_button{
   text-align: center;
   font-size: 45px;
