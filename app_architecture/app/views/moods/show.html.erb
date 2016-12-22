@@ -19,6 +19,7 @@
   <!--
   <% playlist_create %>
    -->
+   <h3>Add a song to the playlist:</h3>
   <%= form_for :comment, html: {class: "form-styling"}, method: 'post', url: "/comment_add" do |f| %>
   <%= label(:comment, :content) %><br>
   <%= f.text_field :content %><br>
