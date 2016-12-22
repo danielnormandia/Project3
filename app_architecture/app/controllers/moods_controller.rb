@@ -10,11 +10,11 @@ class MoodsController < ApplicationController
   def create
     #add mood to db
     mood = params['mood']
-    Mood.create(content: mood['content'],
-                 title: mood['title'],
+    Mood.create( title: mood['title'],
                  created_at: Time.now,
                  updated_at: Time.now,
-                 user_id: mood['user_id'])
+                 user_id: params[:user_id])
+    redirect_to :back
   end
   def update
     mood = params['mood']

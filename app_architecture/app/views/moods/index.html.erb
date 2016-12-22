@@ -7,7 +7,14 @@
   <li id="moods">
   <%= link_to mood['title'], mood_path(mood) %></li>
 </div>
-
+<% end %>
+<h3>Add your mood!</h3>
+<%= form_for :mood, method: 'post', url: "/moods" do |f| %>
+  <%= label(:mood, :title) %><br>
+  <%= f.text_field :title %><br>
+  <%= hidden_field_tag :user_id, "#{User.find_by(email: session[:spotify_user]["email"]).id}" %>
+  <br>
+  <%= f.submit "Submit" %>
 <% end %>
 
 
