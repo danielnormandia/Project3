@@ -1,4 +1,4 @@
-<%= form_for @comment do |f| %>
+<%= form_for, html: {class: "form-styling"}, @comment do |f| %>
   <%= f.label :content %>:
   <%= f.text_field :content %><br />
 

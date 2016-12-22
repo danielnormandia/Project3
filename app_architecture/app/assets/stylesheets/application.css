@@ -38,11 +38,16 @@ body {
  transform: translate(-50%, -50%);
 }
 
+.form-styling input {
+  color: black;
+}
+
 footer {
   background: rgba(0,0,0,0.3);
   height: 75px;
   padding: 15px;
   text-align: center;
+  margin-top: 50px;
 }
 
 footer a {

@@ -2,13 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
+#moods-header {
   text-align: center;
   margin: 100px;
 }
 
+#moods-title {
+  text-align: center;
+}
 
-
+.moods-show {
+  text-align: center;
+}
 
 #moods {
     display: block;
@@ -21,10 +26,6 @@ h1 {
     background-image: url(https://i.ytimg.com/vi/yi1YlDpGocM/maxresdefault.jpg);
     background-size: cover;
     opacity: 0.5;
-
-
-
-
 }
 
 .hostile {
