@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:spotify_user_id] = nil
+    session[:spotify_user] = nil
     redirect_to root_url, :notice => "Signed out!"
   end
 end
