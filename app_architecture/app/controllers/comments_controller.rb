@@ -37,4 +37,8 @@ class CommentsController < ApplicationController
     @comment = Comment.find_by(id: params[:id])
   end
 
+  def destroy
+    Comment.destroy(params['id'])
+    redirect_to :back
+  end
 end
