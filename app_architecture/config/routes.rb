@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   root to: 'users#index'
   get '/auth/spotify/callback', to: 'sessions#create'
-  post "/comment_add", to: "comments#create"
+  post '/comment_add', to: "comments#create"
+  get '/playlist_add', to: 'comments#makePlaylist'
   get '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
